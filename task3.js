@@ -11,4 +11,4 @@ while(b != 0){
 }
 
 nod=Math.abs(a);
-process.stdout.write(nod);
+process.stdout.write(nod + "\n");
