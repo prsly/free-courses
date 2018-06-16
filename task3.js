@@ -10,5 +10,4 @@ while(b != 0){
     b = temp%b;
 }
 
-nod=Math.abs(a);
-process.stdout.write(nod + "\n");
+process.stdout.write(Math.abs(a) + "\n");
