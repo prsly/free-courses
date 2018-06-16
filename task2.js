@@ -4,35 +4,18 @@
 a = process.argv[2];
 b = process.argv[3];
 
-function shiftToRight(str){
-    return str.slice(1).concat(str.slice(0, 1))
-}
-function shiftToLeft(str){
-    return str.slice(-1).concat(str.slice(0, -1))
+function shift(str){
+    return str.slice(1).concat(str.slice(0, 1));
 }
 
 shiftRight = -1;
-aTemp = a;
 for (i = 0; i < a.length; i++){
-    if (aTemp == b){ 
+    if (a == b){ 
         shiftRight = i;
         break;
     }
-    aTemp = shiftToRight(aTemp);
+    a = shift(a);
 }
 
-shiftLeft = -1;
-aTemp = a;
-for (i = 0; i < a.length; i++){
-    if (aTemp == b){
-        shiftLeft = i;
-        break;
-    }
-    aTemp = shiftToLeft(aTemp);
-}
-
-if (shiftLeft <= shiftRight){
-    process.stdout.write(shiftLeft + "\n");
-}else{
-    process.stdout.write(shiftRight + "\n");
-}
+shiftLeft = a.length - shiftRight;
+process.stdout.write(Math.min(shiftLeft, shiftRight) + "\n");
