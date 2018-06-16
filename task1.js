@@ -12,4 +12,4 @@ for (i = 0; i< word.length; i++){
         }
     }
 }
-console.log(word);
+process.stdout.write(word);
