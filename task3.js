@@ -11,4 +11,4 @@ while(b != 0){
 }
 
 nod=Math.abs(a);
-console.log(nod);
+process.stdout.write(nod);
